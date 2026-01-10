@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kovovýroba Blaha | Vranovice</title>
-  <meta name="description" content="Kovovýroba Vranovice – brány, ploty, zábradlí. Zavolejte: +420 737 805 385">
+  <title>Kovovýroba Blaha | Brno a okolí</title>
+  <meta name="description" content="Kovovýroba Brno a okolí – brány, ploty, zábradlí. Zavolejte: +420 737 805 385">
   <style>
     :root { --bg: #f8fafc; --dark: #1e293b; --accent: #3b82f6; --shadow: 0 4px 20px rgba(0,0,0,0.08); }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,8 +12,26 @@
     
     header { background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%); color: white; text-align: center; padding: 40px 20px; }
     h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; margin-bottom: 0.5rem; }
-    .tel-cta { font-size: 1.3rem; background: rgba(255,255,255,0.15); padding: 0.8rem 2rem; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3); }
+    
+    .tel-cta { 
+      font-size: 1.3rem; 
+      background: rgba(255,255,255,0.15); 
+      padding: 0.8rem 2rem; 
+      border-radius: 50px; 
+      color: white; 
+      text-decoration: none; 
+      font-weight: 600; 
+      display: inline-flex; 
+      flex-direction: row; 
+      gap: 10px; 
+      margin-top: 1rem; 
+      transition: all 0.3s; 
+      border: 1px solid rgba(255,255,255,0.3); 
+      align-items: center;
+      justify-content: center;
+    }
     .tel-cta:hover { background: white; color: var(--dark); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .tel-cta span { display: block; }
 
     .main-content { max-width: 1200px; margin: 0 auto; padding: 30px 20px; display: grid; gap: 40px; }
     
@@ -38,14 +56,28 @@
 
     footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 0.9rem; }
 
-    @media (max-width: 768px) { .main-content { padding: 20px 15px; gap: 30px; } .foto { height: 220px; } }
+    @media (max-width: 768px) { 
+      .main-content { padding: 20px 15px; gap: 30px; } 
+      .foto { height: 220px; } 
+      .tel-cta { 
+        flex-direction: column; 
+        gap: 2px; 
+        padding: 1rem 1.5rem; 
+        border-radius: 20px; 
+      }
+      .tel-cta span.small { font-size: 1rem; opacity: 0.9; font-weight: 400; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Kovovýroba Blaha</h1>
-    <p style="margin-bottom: 1rem; opacity: 0.9;">Vranovice – brány, ploty, zábradlí na míru</p>
-    <a href="tel:+420737805385" class="tel-cta">Rádi vám poradíme +420 737 805 385</a>
+    <p style="margin-bottom: 1rem; opacity: 0.9;">Brno a okolí – brány, ploty, zábradlí na míru</p>
+    
+    <a href="tel:+420737805385" class="tel-cta">
+      <span class="small">Rádi vám poradíme</span>
+      <span>+420 737 805 385</span>
+    </a>
   </header>
 
   <div class="main-content">
@@ -60,7 +92,7 @@
       </div>
       <div class="kontakt">
         <h3>📍 Lokalita</h3>
-        <p>Vranovice a okolí</p>
+        <p>Brno a celý Jihomoravský kraj</p>
       </div>
     </div>
 
@@ -96,7 +128,7 @@
   </div>
 
   <footer>
-    <p>Kovovýroba Blaha © 2026 | Vranovice | Jihomoravský kraj</p>
+    <p>Kovovýroba Blaha © 2026 | Brno a okolí | Jihomoravský kraj</p>
   </footer>
 </body>
 </html>
