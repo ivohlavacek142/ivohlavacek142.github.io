@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kovovýroba Blaha | Brno a okolí</title>
-  <meta name="description" content="Kovovýroba Brno a okolí – brány, ploty, zábradlí. Zavolejte: +420 737 805 385">
   <style>
     :root { --bg: #f8fafc; --dark: #1e293b; --accent: #3b82f6; --shadow: 0 4px 20px rgba(0,0,0,0.08); }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,58 +13,32 @@
     h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; margin-bottom: 0.5rem; }
     
     .tel-cta { 
-      font-size: 1.3rem; 
-      background: rgba(255,255,255,0.15); 
-      padding: 0.8rem 2rem; 
-      border-radius: 50px; 
-      color: white; 
-      text-decoration: none; 
-      font-weight: 600; 
-      display: inline-flex; 
-      flex-direction: row; 
-      gap: 10px; 
-      margin-top: 1rem; 
-      transition: all 0.3s; 
-      border: 1px solid rgba(255,255,255,0.3); 
-      align-items: center;
-      justify-content: center;
+      font-size: 1.3rem; background: rgba(255,255,255,0.15); padding: 0.8rem 2rem; border-radius: 50px; 
+      color: white; text-decoration: none; font-weight: 600; display: inline-flex; flex-direction: row; 
+      gap: 10px; margin-top: 1rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3); align-items: center; justify-content: center;
     }
     .tel-cta:hover { background: white; color: var(--dark); transform: translateY(-2px); box-shadow: var(--shadow); }
-    .tel-cta span { display: block; }
 
     .main-content { max-width: 1200px; margin: 0 auto; padding: 30px 20px; display: grid; gap: 40px; }
     
     .kontakty { background: white; padding: 30px; border-radius: 16px; box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .kontakt { text-align: center; }
     .kontakt h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent); }
-    .kontakt p { font-size: 1.2rem; font-weight: 600; margin: 0; word-break: break-all; }
-    .kontakt a { color: var(--dark); text-decoration: none; transition: color 0.2s; }
-    .kontakt a:hover { color: var(--accent); }
+    .kontakt p { font-size: 1.2rem; font-weight: 600; margin: 0; }
+    .kontakt a { color: var(--dark); text-decoration: none; }
 
-    .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .foto { position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s; height: 280px; }
-    .foto:hover { transform: translateY(-4px); }
-    .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    
-    .overlay { 
-      position: absolute; bottom: 0; left: 0; right: 0; 
-      background: linear-gradient(transparent, rgba(0,0,0,0.85)); 
-      color: white; padding: 20px; text-align: left; 
-    }
-    .overlay h3 { font-size: 1.2rem; font-weight: 600; margin: 0; }
+    /* Galerie */
+    .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+    .foto { position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); height: 250px; background: #e2e8f0; }
+    .foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .foto:hover img { transform: scale(1.05); }
 
     footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 0.9rem; }
 
     @media (max-width: 768px) { 
-      .main-content { padding: 20px 15px; gap: 30px; } 
-      .foto { height: 220px; } 
-      .tel-cta { 
-        flex-direction: column; 
-        gap: 2px; 
-        padding: 1rem 1.5rem; 
-        border-radius: 20px; 
-      }
-      .tel-cta span.small { font-size: 1rem; opacity: 0.9; font-weight: 400; }
+      .tel-cta { flex-direction: column; gap: 2px; border-radius: 20px; }
+      .galerie { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+      .foto { height: 180px; }
     }
   </style>
 </head>
@@ -73,9 +46,8 @@
   <header>
     <h1>Kovovýroba Blaha</h1>
     <p style="margin-bottom: 1rem; opacity: 0.9;">Brno a okolí – brány, ploty, zábradlí na míru</p>
-    
     <a href="tel:+420737805385" class="tel-cta">
-      <span class="small">Rádi vám poradíme</span>
+      <span style="font-size: 1rem; font-weight: 400; opacity: 0.9;">Rádi vám poradíme</span>
       <span>+420 737 805 385</span>
     </a>
   </header>
@@ -92,43 +64,32 @@
       </div>
       <div class="kontakt">
         <h3>📍 Lokalita</h3>
-        <p>Brno a celý Jihomoravský kraj</p>
+        <p>Brno a okolí</p>
       </div>
     </div>
 
     <div>
-      <h2 style="text-align: center; margin-bottom: 25px; font-size: 2rem; color: var(--dark);">Naše specializace</h2>
-      <div class="galerie">
-        <div class="foto">
-          <img src="img/foto1.jpg" alt="Vjezdové brány">
-          <div class="overlay"><h3>🏠 Vjezdové brány</h3></div>
-        </div>
-        <div class="foto">
-          <img src="img/foto2.jpg" alt="Ploty a oplocení">
-          <div class="overlay"><h3>🚧 Ploty & oplocení</h3></div>
-        </div>
-        <div class="foto">
-          <img src="img/foto3.jpg" alt="Zábradlí">
-          <div class="overlay"><h3>🔒 Bezpečnostní zábradlí</h3></div>
-        </div>
-        <div class="foto">
-          <img src="img/foto4.jpg" alt="Ocelové konstrukce">
-          <div class="overlay"><h3>⚙️ Ocelové konstrukce</h3></div>
-        </div>
-        <div class="foto">
-          <img src="img/foto5.jpg" alt="Pergoly a přístřešky">
-          <div class="overlay"><h3>⛱️ Pergoly & přístřešky</h3></div>
-        </div>
-        <div class="foto">
-          <img src="img/foto6.jpg" alt="Zakázková výroba">
-          <div class="overlay"><h3>🔧 Zakázková výroba</h3></div>
-        </div>
-      </div>
+      <h2 style="text-align: center; margin-bottom: 25px; font-size: 2rem; color: var(--dark);">Naše práce</h2>
+      <div id="galerie-grid" class="galerie"></div>
     </div>
   </div>
 
   <footer>
     <p>Kovovýroba Blaha © 2026 | Brno a okolí | Jihomoravský kraj</p>
   </footer>
+
+  <script>
+    // Nastavení počtu fotek
+    const pocetFotek = 52;
+    const galerieGrid = document.getElementById('galerie-grid');
+
+    // Funkce pro vygenerování galerie
+    for (let i = 1; i <= pocetFotek; i++) {
+      const div = document.createElement('div');
+      div.className = 'foto';
+      div.innerHTML = `<img src="img/foto${i}.jpg" alt="Kovovýroba Blaha - práce č. ${i}" loading="lazy">`;
+      galerieGrid.appendChild(div);
+    }
+  </script>
 </body>
 </html>
