@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kovovýroba BlaHA | kovovyrobablaha.cz</title>
+  <meta name="description" content="Profesionální kovovýroba na míru – brány, ploty, zábradlí, konstrukce. Rychle, kvalitně, cenově výhodně.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <style>
+    :root { --primary: #1e3a8a; --secondary: #3b82f6; --accent: #0ea5e9; --dark: #0f172a; --light: #f8fafc; --shadow: 0 20px 60px rgba(0,0,0,0.15); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--dark); overflow-x: hidden; }
+    
+    /* Header */
+    header { min-height: 100vh; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); color: white; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+    header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); }
+    .hero-content { max-width: 800px; padding: 0 20px; z-index: 2; position: relative; animation: fadeInUp 1s ease-out; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .tagline { font-size: clamp(1.2rem, 4vw, 2rem); opacity: 0.95; margin-bottom: 2rem; }
+    .cta { display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 1rem 2.5rem; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3); }
+    .cta:hover { background: white; color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow); }
+
+    /* Sections */
+    section { padding: 100px 20px; max-width: 1400px; margin: 0 auto; }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); text-align: center; margin-bottom: 4rem; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; }
+    h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(90deg, var(--accent), transparent); border-radius: 2px; }
+
+    /* Kontakty */
+    .kontakty { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .kontakt-card { background: white; padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: var(--shadow); transition: all 0.4s; position: relative; overflow: hidden; }
+    .kontakt-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--secondary)); }
+    .kontakt-card:hover { transform: translateY(-10px); box-shadow: 0 30px 80px rgba(0,0,0,0.2); }
+    .kontakt-icon { font-size: 4rem; margin-bottom: 1rem; display: block; }
+
+    /* Služby */
+    .sluzby-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+    .sluzba { background: white; padding: 3rem 2rem; border-radius: 20px; text-align: center; box-shadow: var(--shadow); transition: all 0.4s; position: relative; }
+    .sluzba::before { font-size: 4rem; line-height: 1; position: absolute; top: 2rem; right: 2rem; opacity: 0.1; }
+    .sluzba:hover { transform: translateY(-10px); }
+
+    /* Galerie */
+    .galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+    .foto { position: relative; overflow: hidden; border-radius: 20px; box-shadow: var(--shadow); cursor: pointer; transition: all 0.4s; height: 280px; }
+    .foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .foto:hover img { transform: scale(1.1); }
+    .foto-overlay { position: absolute; inset: 0; background: linear-gradient(45deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+
+    /* Footer */
+    footer { background: var(--dark); color: white; text-align: center; padding: 3rem 20px; }
+    
+    /* Animace */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .float { animation: float 3s ease-in-out infinite; }
+
+    /* Mobile */
+    @media (max-width: 768px) { section { padding: 60px 20px; } .hero-content h1 { font-size: 2.5rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-content">
+      <h1>Kovovýroba BlaHA</h1>
+      <p class="tagline">Kovové konstrukce na míru s 15+ lety zkušeností</p>
+      <a href="#kontakt" class="cta">Kontaktovat nás</a>
+    </div>
+  </header>
+
+  <section id="kontakt">
+    <h2>Naši kontakty</h2>
+    <div class="kontakty">
+      <!-- UPRAV ZDE SVOJE ÚDAJE! -->
+      <div class="kontakt-card">
+        <span class="kontakt-icon">📞</span>
+        <h3>Telefon</h3>
+        <p>+420 777 XXX XXX<br><small>Po–Pá 7:30–16:00</small></p>
+      </div>
+      <div class="kontakt-card">
+        <span class="kontakt-icon">✉️</span>
+        <h3>E-mail</h3>
+        <p>info@kovovyrobablaha.cz</p>
+      </div>
+      <div class="kontakt-card">
+        <span class="kontakt-icon">📍</span>
+        <h3>Dílna</h3>
+        <p>Vojkovice<br>Jihomoravský kraj</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sluzby" style="background: var(--light);">
+    <h2>Naše služby</h2>
+    <div class="sluzby-grid">
+      <div class="sluzba" data-icon="🏠"> <h3>Vjezdové brány</h3> <p>Automatizované systémy, kované rámy, kompletní montáž.</p> </div>
+      <div class="sluzba" data-icon="🚧"> <h3>Ploty & oplocení</h3> <p>Paneelové, kované, designové – na klíč.</p> </div>
+      <div class="sluzba" data-icon="🔒"> <h3>Zábradlí & schody</h3> <p>Nerez, kovo, sklo – moderní i klasika.</p> </div>
+      <div class="sluzba" data-icon="⚙️"> <h3>Kov. konstrukce</h3> <p>Halové stavby, pergoly, zámeří, opravy.</p> </div>
+    </div>
+  </section>
+
+  <section id="reference">
+    <h2>Reference</h2>
+    <div class="galerie">
+      <!-- SEM NAHRAJ FOTKY: img/foto1.jpg, foto2.jpg... foto8.jpg (800x600px) -->
+      <div class="foto"><img src="img/foto1.jpg" alt="Brána" loading="lazy"><div class="foto-overlay">Brána na klíč</div></div>
+      <div class="foto"><img src="img/foto2.jpg" alt="Plot" loading="lazy"><div class="foto-overlay">Kovový plot</div></div>
+      <div class="foto"><img src="img/foto3.jpg" alt="Zábradlí" loading="lazy"><div class="foto-overlay">Schodišťové zábr.</div></div>
+      <div class="foto"><img src="img/foto4.jpg" alt="Konstrukce" loading="lazy"><div class="foto-overlay">Halová stavba</div></div>
+      <div class="foto"><img src="img/foto5.jpg" alt="Pergola" loading="lazy"><div class="foto-overlay">Zahradní pergola</div></div>
+      <div class="foto"><img src="img/foto6.jpg" alt="Oprava" loading="lazy"><div class="foto-overlay">Renovace</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Kovovýroba BlaHA | <a href="#kontakt" style="color: var(--accent);">Zavolejte nám</a> | kovovyrobablaha.cz | Vytvořeno pro GitHub Pages</p>
+  </footer>
+</body>
+</html>
